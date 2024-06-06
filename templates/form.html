@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Data Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Optional: Add custom CSS here */
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="container-fluid bg-dark text-light py-3">
+        <h1 class="text-center">Forest City</h1>
+    </div>
+
+    <div class="container">
+        <h1 class="mb-4">Insert Data</h1>
+        <form class="row g-3 bg-light p-4 rounded" action="/submit" method="post">
+            <div class="col-md-6">
+                <label for="block_x_1" class="form-label">Block X:</label>
+                <input type="text" class="form-control" id="block_x_1" name="block_x">
+            </div>
+            <div class="col-md-6">
+                <label for="block_y_1" class="form-label">Block Y:</label>
+                <input type="text" class="form-control" id="block_y_1" name="block_y">
+            </div>
+            <div class="col-12">
+                <label for="coordinate_x" class="form-label">Coordinate X:</label>
+                <input type="text" class="form-control" id="coordinate_x" name="coordinate_x">
+            </div>
+            <div class="col-12">
+                <label for="coordinate_y" class="form-label">Coordinate Y:</label>
+                <input type="text" class="form-control" id="coordinate_y" name="coordinate_y">
+            </div>
+            <div class="col-md-6">
+                <label for="tree_number" class="form-label">Tree Number:</label>
+                <input type="text" class="form-control" id="tree_number" name="tree_number">
+            </div>
+            <div class="col-md-6">
+                <label for="specode" class="form-label">Specode:</label>
+                <input type="text" class="form-control" id="specode" name="specode">
+            </div>
+            <div class="col-12">
+                <label for="species_group" class="form-label">Species Group:</label>
+                <input type="text" class="form-control" id="species_group" name="species_group">
+            </div>
+            <div class="col-md-6">
+                <label for="diameter_cm" class="form-label">Diameter (cm):</label>
+                <input type="text" class="form-control" id="diameter_cm" name="diameter_cm">
+            </div>
+            <div class="col-md-6">
+                <label for="diameter_class" class="form-label">Diameter Class:</label>
+                <input type="text" class="form-control" id="diameter_class" name="diameter_class">
+            </div>
+            <div class="col-md-6">
+                <label for="height_m" class="form-label">Height (m):</label>
+                <input type="text" class="form-control" id="height_m" name="height_m">
+            </div>
+            <div class="col-md-6">
+                <label for="volume_m3" class="form-label">Volume (m^3):</label>
+                <input type="text" class="form-control" id="volume_m3" name="volume_m3">
+            </div>
+            <div class="col-md-6">
+                <label for="status" class="form-label">Status:</label>
+                <input type="text" class="form-control" id="status" name="status">
+            </div>
+            <div class="col-12 p-4 d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+        
+        
+        <!--BELOW HERE IS TREE DATA-->
+
+        <!-- <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="bg-dark text-light">
+                    <tr>
+                        <th>Block X</th>
+                        <th>Block Y</th>
+                        <th>Coordinate X</th>
+                        <th>Coordinate Y</th>
+                        <th>Tree Number</th>
+                        <th>Species Code</th>
+                        <th>Species Group</th>
+                        <th>Diameter (cm)</th>
+                        <th>Diameter Class</th>
+                        <th>Height (m)</th>
+                        <th>Volume (m^3)</th>
+                        <th>Status</th>
+                        <th>Time Updated</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    Iterate over data and dynamically populate the table
+                    {% for tree in data %}
+                    <tr>
+                        <td>{{ tree[0] }}</td>
+                        <td>{{ tree[1] }}</td>
+                        <td>{{ tree[2] }}</td>
+                        <td>{{ tree[3] }}</td>
+                        <td>{{ tree[4] }}</td>
+                        <td>{{ tree[5] }}</td>
+                        <td>{{ tree[6] }}</td>
+                        <td>{{ tree[7] }}</td>
+                        <td>{{ tree[8] }}</td>
+                        <td>{{ tree[9] }}</td>
+                        <td>{{ tree[10] }}</td>
+                        <td>{{ tree[11] }}</td>
+                        <td>{{ tree[12] }}</td>
+                        <td>{{ tree[13] }}</td>
+                        <td>
+                            <a href="delete">Delete</a>
+                            <a href="update">Update</a>
+                        </td>
+                    </tr>
+                    {% endfor %} YG ATAS NI TAK PAKAI-->  
+
+               <!--  
+                    {% for row in data %}
+                    <tr>
+                        {% for cell in row %}
+                        <td>{{ cell }}</td>
+                        {% endfor %}
+                        <td>
+                            <a href="delete" class="btn btn-danger">Delete</a>
+                            <a href="update" class="btn btn-primary">Update</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div> -->
+
+
+        <!--BELOW HERE IS STAND TABLE-->
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="bg-dark text-light">
+                    <tr>
+                        <th>Species Group</th>
+                        <th>Total Volume (m^3)</th>
+                        <th>Total Number of Trees</th>
+                        <th>5-15 cm</th>
+                        <th>15-30 cm</th>
+                        <th>30-45 cm</th>
+                        <th>45-60 cm</th>
+                        <th>60-250 cm</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in stand_data %}
+                    <tr>
+                        {% for cell in row %}
+                        <td>{{ cell }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid bg-dark text-light py-3 mt-4">
+        <p class="text-center">&copy; 2024 Forest City. All rights reserved.</p>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
